@@ -1,0 +1,126 @@
+<!-- res/layout/activity_main.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity">
+
+    <!-- Ajout d'une image d'arrière-plan -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/back_image"
+        android:scaleType="centerCrop"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="48dp"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:id="@+id/ll_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="50dp"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <!-- Modification du titre et de son style -->
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Convertisseur de devises"
+                android:textSize="17sp"
+                android:textColor="#f5f5dc"
+                android:padding="20dp"/>
+
+            <!-- Modification de la disposition des éléments -->
+            <LinearLayout
+                android:id="@+id/ll_firstConversion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="10dp">
+
+                <EditText
+                    android:id="@+id/input_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="5"
+                    android:hint="Montant"
+                    android:inputType="number"
+                    android:textSize="18sp"
+                    android:padding="10dp"
+                    android:minHeight="48dp"
+                    android:minWidth="48dp"/>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinner_from"
+                    android:padding="10dp"
+                    android:minHeight="48dp"
+                    android:minWidth="48dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_secondConversion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:padding="10dp">
+
+                <EditText
+                    android:id="@+id/result_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="5"
+                    android:hint="Résultat"
+                    android:inputType="number"
+                    android:textSize="18sp"
+                    android:padding="10dp"
+                    android:minHeight="48dp"
+                    android:minWidth="48dp"/>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinner_to"
+                    android:padding="10dp"
+                    android:minHeight="48dp"
+                    android:minWidth="48dp"/>
+
+            </LinearLayout>
+
+            <!-- Modification du style du bouton Convert -->
+            <Button
+                android:id="@+id/btn_convert"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Convertir"
+                android:textSize="18sp"
+                android:background="@drawable/rounded_button"
+                android:textColor="#FFFFFF"
+                android:elevation="4dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
